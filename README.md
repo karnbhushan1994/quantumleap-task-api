@@ -25,37 +25,17 @@ Base URL: http://localhost:5000/api/tasks
 - Joi (input validation)
 - Dotenv
 
+ Installation
 
 
-  Folder Structure
-
-
-task-api/
-├── controllers/         # Route logic
-├── models/              # Mongoose schemas
-├── routes/              # Route definitions
-├── validations/         # Joi validation schemas
-├── utils/               # Helpers (e.g. response formatter)
-├── server.js            # Entry point
-├── .env                 # Environment variables
-└── README.md
-
-
-
-
- ⚙️ Installation
-
-bash
-git clone https://github.com/your-username/task-api.git
+git clone https://github.com/karnbhushan1994/quantumleap-task-api
 cd task-api
 npm install
 
 
-
-
   Environment Setup
 
-Create a `.env` file and add:
+Create a .env file and add:
 
 
 PORT=5000
@@ -64,19 +44,17 @@ MONGO_URI=your_mongodb_connection_string
 
 
 
- ▶️ Start the Server
+# Start the Server
 
-bash
+
 npm start
-
 
  Server will run at: http://localhost:5000
 
+ # API Endpoints
 
- 🧪 API Endpoints
-
-# 1. ✅ Create a Task  
-POST `/api/tasks`
+# 1.  Create a Task  
+POST /api/tasks
 
  Request Body:
 json
@@ -88,25 +66,24 @@ json
 
 
  Responses:
-- `201`: Task created
-- `400`: Validation error (missing or invalid fields)
-
+- 201: Task created
+- 400: Validation error (missing or invalid fields)
 
 
 # 2.  Get Tasks  
-GET `/api/tasks`
+GET /api/tasks
 
  Optional Query Params:
-- `status=pending` or `status=done`
-- `sort=dueDate` (asc)
-- `sort=-dueDate` (desc)
+- status=pending or status=done
+- sort=dueDate (asc)
+- sort=-dueDate (desc)
 
  Example:
 http
 GET /api/tasks?status=pending&sort=-dueDate
 
 # 3. Task Statistics  
-GET `/api/tasks/stats`
+GET /api/tasks/stats
 
  Response:
 json
@@ -115,12 +92,11 @@ json
   "done": 4
 }
 
+ Validation Rules
 
- 🧪 Validation Rules
-
-- `title`: required, non-empty string
-- `status`: must be either `pending` or `done`
-- `dueDate`: must be a future date
+- title: required, non-empty string
+- status: must be either pending or done
+- dueDate: must be a future date
 
 
 
@@ -138,17 +114,17 @@ json
 
 
 
-Absolutely! Here's a well-organized Sample Requests and Responses section you can paste into your `README.md` or documentation file.
+Absolutely! Here's a well-organized Sample Requests and Responses section you can paste into your README.md or documentation file.
 
 
 
- 📌 Sample Requests & Responses
+ Sample Requests & Responses
 
 
 
-# ✅ 1. Create a Task
+#  1. Create a Task
 
-POST `/api/tasks`
+POST /api/tasks
 
  Request
 json
@@ -215,7 +191,7 @@ json
 
 #  2. Get All Tasks
 
-GET `/api/tasks`
+GET /api/tasks
 
  Response
 json
@@ -239,7 +215,7 @@ json
 
 #  3. Filter by Status
 
-GET `/api/tasks?status=pending`
+GET /api/tasks?status=pending
 
  Response
 json
@@ -255,10 +231,10 @@ json
 # ↕ 4. Sort Tasks by Due Date
 
 Ascending:  
-`GET /api/tasks?sort=dueDate`
+GET /api/tasks?sort=dueDate
 
 Descending:  
-`GET /api/tasks?sort=-dueDate`
+GET /api/tasks?sort=-dueDate
 
  Response (Ascending Example)
 json
@@ -271,7 +247,7 @@ json
 
 #  5. Get Task Statistics
 
-GET `/api/tasks/stats`
+GET /api/tasks/stats
 
  Response
 json
